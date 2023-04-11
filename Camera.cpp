@@ -20,27 +20,29 @@ CamWidget::CamWidget(QWidget *parent)
 
 
     //N1 
-    // cv::Mat mat = cv::imread("C:/Users/hovha/Downloads/image2.jpg");
+    // cv::Mat mat = cv::imread("C:/Users/hovha/Downloads/funny.jpg");
     // Image img=MatToImage(mat);
     // QImage image=ImageToQImage(img);
     // QPixmap pixmap = QPixmap::fromImage(image);
-    // m_label->setPixmap(pixmap);//ashxatox
+    // m_label->setPixmap(pixmap);
 
     //N2
-    // QImage image("C:/Users/hovha/Downloads/funny.jpg");
-    // Image img=QImageToImage(image);
-    // cv::Mat mat=ImageToMat(img);
-    // img=MatToImage(mat);
-    // image=ImageToQImage(img);
-    // QPixmap pixmap = QPixmap::fromImage(image);
-    // m_label->setPixmap(pixmap);//chashxatox
+    QImage image("C:/Users/hovha/Downloads/funny.jpg");
+    Image img=QImageToImage(image);
+    //fun(img);
+    //makeGray(img);
+    foo(img);
+    //blurImage(img);
+    image=ImageToQImage(img);
+    QPixmap pixmap = QPixmap::fromImage(image);
+    m_label->setPixmap(pixmap);
 
     //N3
-    // QImage image("C:/Users/hovha/Downloads/funny.jpg");
+    // QImage image("C:/Users/hovha/Downloads/image2.jpg");
     // Image img=QImageToImage(image);
     // image=ImageToQImage(img);
     // QPixmap pixmap = QPixmap::fromImage(image);
-    // m_label->setPixmap(pixmap);//chashxatox
+    // m_label->setPixmap(pixmap);
     
     button=new QPushButton("Image");
 
@@ -59,16 +61,10 @@ CamWidget::~CamWidget()
 
 void CamWidget::filter()
 {
-    QImage image("C:/Users/hovha/Downloads/funny.jpg");
+    QImage image("C:/Users/hovha/Downloads/image2.jpg");
     Image img=QImageToImage(image);
-    //fun(img);
+    fun(img);
     image=ImageToQImage(img);
     QPixmap pixmap = QPixmap::fromImage(image);
-
-    // QImage image("C:/Users/hovha/Downloads/funny.jpg");
-    //     // Create a QPixmap from the QImage
-    // QPixmap pixmap = QPixmap::fromImage(image);
-
-     // Set the QPixmap as the pixmap for the label
     m_label->setPixmap(pixmap);
 }
